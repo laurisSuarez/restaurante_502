@@ -6,30 +6,36 @@
 <div class="card">
     <h3>Clientes</h3>
     <p>{{ total_clientes }}</p>
+    <p><a href="{% url 'cliente_lista' %}">Gestionar</a></p>
 </div>
 
 <div class="card">
     <h3>Empleados</h3>
     <p>{{ total_empleados }}</p>
+    <p><a href="{% url 'empleado_lista' %}">Gestionar</a></p>
 </div>
 
 <div class="card">
     <h3>Mesas</h3>
     <p>{{ total_mesas }}</p>
+    <p><a href="{% url 'mesa_lista' %}">Gestionar</a></p>
 </div>
 
 <div class="card">
     <h3>Platos</h3>
     <p>{{ total_platos }}</p>
+    <p><a href="{% url 'plato_lista' %}">Gestionar</a></p>
 </div>
 
 <div class="card">
     <h3>Órdenes</h3>
     <p>{{ total_ordenes }}</p>
+    <p><a href="{% url 'orden_lista' %}">Gestionar</a></p>
 </div>
 
 <div class="card">
     <h3>Facturas</h3>
     <p>{{ total_facturas }}</p>
+    <p><a href="{% url 'factura_lista' %}">Gestionar</a></p>
 </div>
 {% endblock %}

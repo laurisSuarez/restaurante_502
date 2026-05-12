@@ -1,0 +1,11 @@
+{% extends 'gestion/base.html' %}
+
+{% block content %}
+<h2>Eliminar factura</h2>
+<p>¿Confirma que desea eliminar la <strong>factura #{{ factura.id }}</strong> (orden {{ factura.orden.id }})?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Sí, eliminar</button>
+    <a href="{% url 'factura_lista' %}">Cancelar</a>
+</form>
+{% endblock %}

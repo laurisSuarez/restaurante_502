@@ -1,0 +1,36 @@
+{% extends 'gestion/base.html' %}
+
+{% block content %}
+<h2>Clientes</h2>
+<p><a href="{% url 'cliente_crear' %}">Crear cliente</a></p>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Teléfono</th>
+            <th>Correo</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for cliente in clientes %}
+        <tr>
+            <td>{{ cliente.id }}</td>
+            <td>{{ cliente.nombre }}</td>
+            <td>{{ cliente.telefono|default:"—" }}</td>
+            <td>{{ cliente.correo|default:"—" }}</td>
+            <td>
+                <a href="{% url 'cliente_editar' cliente.pk %}">Editar</a>
+                |
+                <a href="{% url 'cliente_eliminar' cliente.pk %}">Eliminar</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="5">No hay clientes registrados.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

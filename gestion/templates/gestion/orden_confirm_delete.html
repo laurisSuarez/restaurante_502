@@ -1,0 +1,11 @@
+{% extends 'gestion/base.html' %}
+
+{% block content %}
+<h2>Eliminar orden</h2>
+<p>¿Confirma que desea eliminar la <strong>orden #{{ orden.id }}</strong> ({{ orden.cliente.nombre }})?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Sí, eliminar</button>
+    <a href="{% url 'orden_lista' %}">Cancelar</a>
+</form>
+{% endblock %}

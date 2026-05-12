@@ -1,0 +1,30 @@
+{% extends 'gestion/base.html' %}
+
+{% block content %}
+<h2>{{ titulo }}</h2>
+<form method="post" novalidate>
+    {% csrf_token %}
+    {% if form.non_field_errors %}
+        <ul class="errores">
+            {% for err in form.non_field_errors %}<li>{{ err }}</li>{% endfor %}
+        </ul>
+    {% endif %}
+    <table>
+        {% for field in form %}
+        <tr>
+            <th>{{ field.label_tag }}</th>
+            <td>
+                {{ field }}
+                {% if field.errors %}
+                    <ul class="errores">{% for err in field.errors %}<li>{{ err }}</li>{% endfor %}</ul>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p>
+        <button type="submit">Guardar</button>
+        <a href="{% url 'plato_lista' %}">Cancelar</a>
+    </p>
+</form>
+{% endblock %}

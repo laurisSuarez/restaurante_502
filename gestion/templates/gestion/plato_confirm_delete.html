@@ -1,0 +1,11 @@
+{% extends 'gestion/base.html' %}
+
+{% block content %}
+<h2>Eliminar plato</h2>
+<p>¿Confirma que desea eliminar el plato <strong>{{ plato.nombre_plato }}</strong>?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Sí, eliminar</button>
+    <a href="{% url 'plato_lista' %}">Cancelar</a>
+</form>
+{% endblock %}
