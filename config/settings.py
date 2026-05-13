@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-co3+*#_six4pr_)11&mb&hs2-m0q5l(b@^b%$xxamd!0fpzi50'
+SECRET_KEY = 'django-insecure-flt65n2v@*gzitst0f#k_0iure27v(p(+v%_y(^69_fzw1_cwl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -79,17 +79,17 @@ DATABASES = {
         'ENGINE': 'mssql',
         'NAME': 'restaurante_502',
         'USER': 'sa',
-        'PASSWORD': '12345#qwert',
+        'PASSWORD': '1234567890',
         'HOST': r'localhost\SQLEXPRESS',
         'PORT': '1433',
         'OPTIONS': {
-            'driver': 'ODBC Driver 18 for SQL Server',
-            'extra_params' : 'TrustServerCertificate=yes;',
+            'driver': 'ODBC Driver 17 for SQL Server',
+            'extra_params': 'TrustServerCertificate=no',
         },
     }
 }
 
-DATABASES_CONNECTION_POOLING = False
+DATABASE_CONNECTION_POOLING = False
 CONN_MAX_AGE = 0
 
 # Password validation
